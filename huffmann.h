@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 typedef struct Node {
-    Node *child[3];
-    Node *parent;
+    struct Node *child[3];
+    //Node *parent;
     char value;
 } Node;
 
@@ -10,6 +10,7 @@ typedef struct FileContent {
     Node node; // A leaf node
     unsigned pos; // The position of the ascii in the table
     unsigned occ; // How often it appeared in the text
+    char *code; // Code of this char
 } FileContent;
 
 // This functions reads the content of a file and counts how often each
@@ -20,9 +21,9 @@ typedef struct FileContent {
 // 'a' == FileContentArray['a'].node.value
 // To make things simple, filecontent is always a table of size 256
 
-FileContent* ReadFile(const char[] filename);
+FileContent* ReadFile(const char *filename);
 
-
+/*
 // Creates the (generalized) Huffmann tree from a filecontent
 Node* CreateTree(FileContent* filecontent);
 
@@ -32,4 +33,4 @@ void EncodeFile(Node *root, FileContent* filecontent,
 
 // The inverse function
 void DecodeFile(Node *root, FileContent* filecontent,
-                const char[] infile, const char[] outfile);
+                const char[] infile, const char[] outfile); */
