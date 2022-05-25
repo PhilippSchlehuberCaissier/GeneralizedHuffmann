@@ -2,7 +2,7 @@
 
 typedef struct Node {
     Node *child[3];
-    Node *parent;
+    // Node *parent;
     char value;
 } Node;
 
@@ -10,6 +10,7 @@ typedef struct FileContent {
     Node node; // A leaf node
     unsigned pos; // The position of the ascii in the table
     unsigned occ; // How often it appeared in the text
+    char *code; // Code of this char
 } FileContent;
 
 // This functions reads the content of a file and counts how often each
